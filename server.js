@@ -42,7 +42,6 @@ app.listen(PORT, () => {
 // Need front end route for dashboard
 // Need front end route for login page
 // Need front end route to write a post and submit it. Front end route lets user see all their existing posts, update the, or write a new one.
-// Need front end route to update a post
 
 
 // Back end
