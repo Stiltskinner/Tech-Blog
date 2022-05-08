@@ -12,6 +12,15 @@
           <p>{{body}}</p>
       </div>
   </div>
+  <div class="post card">
+      <form class="form" id="new-comment-form">
+    <div>
+      <label for="comment-body">Comment</label>
+      <textarea class="form-input" type="text" id="comment-body" name="comment-body"></textarea>
+      <button type="submit" class="btn">Add Comment</button>
+    </div>
+  </form>
+  </div>
   {{#if comments.[0]}}
   {{#each comments as |comment|}}
   <div class="card">
