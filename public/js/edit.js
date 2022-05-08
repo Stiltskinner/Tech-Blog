@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const postId = document.querySelector('input[name="post-id"]').value;
 
 const editFormHandler = async function(event) {
@@ -6,14 +8,22 @@ const editFormHandler = async function(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const body = document.querySelector('textarea[name="post-body"]').value;
 
-  await fetch('', {
-    
+  await fetch(`/api/post/${postId}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      title: title,
+      body: body,
     }),
-    
-  });
+    headers: { 'Content-Type': 'application/json' },
+    });
+console.log("put response", response)
+    if (response.ok) {
+      res.redirect('dashboard');
+    } else {
+      alert('Failed to update post')
+    }
+  };
 
-  document.location.replace('/dashboard');
-};
 
 const deleteClickHandler = async function() {
   await fetch(``, {
