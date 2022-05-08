@@ -189,6 +189,10 @@ input {
   padding: 1%;
 }
 
+.card-body p {
+  margin-right: 4px;
+}
+
 /* FORM */
 .form-label,
 .form-input,
