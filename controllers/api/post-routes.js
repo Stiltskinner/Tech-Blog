@@ -6,7 +6,20 @@ router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [{ all: true, nested: true}],
-      // include: [{ model: Comment, model: User}],
+    });
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      include: [{ all: true, nested: true}],
+      where: {
+        id: req.params.id,
+      },
     });
     res.status(200).json(postData);
   } catch (err) {
