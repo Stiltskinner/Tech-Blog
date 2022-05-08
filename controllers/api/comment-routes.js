@@ -14,4 +14,22 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const [affectedRows] = await Comment.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (affectedRows > 0) {
+      res.json({message: "comment updated"});
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
