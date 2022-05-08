@@ -1,5 +1,13 @@
 <div class="post">
-  
+  <div class="card">
+      <div class="flex-row">
+            <p>Posted by {{post.User.username}} </p>
+            <p>on {{post.createdAt}}</p>
+          </div>
+      <div class="card-body">
+          <p>{{post.body}}</p>
+      </div>
+  </div>
 </div>
 
 <script src="/js/comment.js"></script>

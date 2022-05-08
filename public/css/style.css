@@ -180,6 +180,11 @@ input {
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
+.card-header p {
+  font-size: 10px;
+  margin-right: 4px;
+}
+
 .card-body {
   padding: 1%;
 }

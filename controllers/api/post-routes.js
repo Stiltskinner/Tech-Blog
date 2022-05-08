@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [{ all: true, nested: true}],
+      // include: [{ model: Comment, model: User}],
     });
     res.status(200).json(postData);
   } catch (err) {
@@ -17,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
   const body = req.body;
 
   try {
-    const newPost = await Post.create({ ...body, userId: req.session.userId });
+    const newPost = await Post.create({ ...body, user_id: req.session.userId });
     res.json(newPost);
   } catch (err) {
     res.status(500).json(err);
