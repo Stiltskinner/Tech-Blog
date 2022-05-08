@@ -40,17 +40,16 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const [affectedRows] = await Post.update(req.body, {
+    const post = await Post.update(req.body, {
       where: {
         id: req.params.id,
       },
     });
-    if (affectedRows > 0) {
-      res.json({message: "post updated"});
+    post.title = req.body.title;
+    post.body = req.body.body;
+      res.json(post);
       res.status(200).end();
-    } else {
-      res.status(404).end();
-    }
+    
   } catch (err) {
     res.status(500).json(err);
   }

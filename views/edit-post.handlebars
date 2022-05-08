@@ -1,10 +1,11 @@
 <div class="post card">
-  <form class="form" id="edit-post-form">
+  <form class="form" id='edit-post-form'>
     <div>
       <label for="post-title">Title</label>
       <input class="form-input" type="text" id="post-title" name="post-title" value="{{post.title}}">
       <label for="post-body">Content</label>
       <textarea class="form-input" type="text" id="post-body" name="post-body">{{post.body}}</textarea>
+      <input class="form-input hide" type="text" id="post-id" name="post-id" value="{{post.id}}" readonly="true">
       <button type="submit" class="btn">Update Post</button>
     </div>
   </form>

@@ -1,13 +1,10 @@
-const { response } = require("express");
-
 const postId = document.querySelector('input[name="post-id"]').value;
 
 const editFormHandler = async function(event) {
   event.preventDefault();
-
   const title = document.querySelector('input[name="post-title"]').value;
   const body = document.querySelector('textarea[name="post-body"]').value;
-
+  console.log(postId)
   await fetch(`/api/post/${postId}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -16,26 +13,20 @@ const editFormHandler = async function(event) {
     }),
     headers: { 'Content-Type': 'application/json' },
     });
-console.log("put response", response)
-    if (response.ok) {
-      res.redirect('dashboard');
-    } else {
-      alert('Failed to update post')
-    }
+    document.location.replace('/dashboard');
   };
 
+// const deleteClickHandler = async function() {
+//   await fetch(``, {
+//     method: 'DELETE'
+//   });
 
-const deleteClickHandler = async function() {
-  await fetch(``, {
-    method: 'DELETE'
-  });
-
-  document.location.replace('/dashboard');
-};
+//   document.location.replace('/dashboard');
+// };
 
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
-document
-  .querySelector('#delete-btn')
-  .addEventListener('click', deleteClickHandler);
+// document
+//   .querySelector('#delete-btn')
+//   .addEventListener('click', deleteClickHandler);

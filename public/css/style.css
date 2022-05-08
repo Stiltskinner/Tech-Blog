@@ -193,6 +193,10 @@ input {
   margin-right: 4px;
 }
 
+.hide {
+  display:none;
+}
+
 /* FORM */
 .form-label,
 .form-input,
