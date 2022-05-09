@@ -17,6 +17,8 @@
 ## Description
 This app is a complete front and back end website that allows users to sign up to create an account, write blog posts, comment on blog posts, edit posts, add comments to posts, and delete posts. It uses sequelize models to store all of these posts, and it has authentication required for adding new posts and editing them.
 
+[Check out the deployed app on heroku!](https://pure-temple-52601.herokuapp.com/)
+
 ![Demonstration](./Tech%20Blog%20Demo.gif)
 
 [Demonstration Video - Higher Res on Google Drive](https://drive.google.com/file/d/1XliKV1BvITmHY5JyUfY-aBDl9oV3i68n/view)
