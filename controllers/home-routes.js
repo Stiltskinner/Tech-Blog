@@ -7,9 +7,10 @@ router.get('/', async (req, res) => {
     const postData = await Post.findAll({
       include: [{ all: true, nested: true}]
     });
-
+    const loginStatus = req.session.loggedIn;
     const posts = postData.map((post) => post.get({ plain: true }));
     res.render('all-posts', {
+      loginStatus,
       posts
     });
   } catch (err) {

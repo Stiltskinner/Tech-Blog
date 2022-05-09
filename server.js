@@ -39,21 +39,3 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
   sequelize.sync({ force: false });
 });
-// Front end
-// Need a homepage for the front end
-// Need front end route for dashboard
-// Need front end route for login page
-// Need front end route to write a post and submit it. Front end route lets user see all their existing posts, update the, or write a new one.
-
-
-// Back end
-// Routes
-// Need routes for home page to show blog posts
-// Need api routes for blog post db. Blog posts need: title, contents, creator username, date created, option to leave comments.
-// Need login api route
-// Need sign up api route
-// Need backend put route to update a post
-// Need a logout route.
-// Need logins to expire after a set amount of time.
-
-// Need session and cookies to save loggedin status
