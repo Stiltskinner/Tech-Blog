@@ -43,10 +43,12 @@ router.get('/post/:id', async (req, res) => {
       const postData = await Post.findByPk(req.params.id, {
         include: [{ all: true, nested: true}],
       });
+      const loginStatus = req.session.loggedIn;
       if (postData) {
         const post = postData.get({ plain: true});
         res.render('single-post', {
-          ...post
+          ...post,
+          loginStatus
         })
       } else {
         res.status(404).end();
